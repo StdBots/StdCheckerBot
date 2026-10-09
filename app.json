@@ -1,0 +1,65 @@
+{
+  "name": "StdCheckerBot",
+  "description": "High-Performance Concurrency Telegram HTTP, URL, Proxy, and Link Diagnostic Bot built in Go. Multi-threaded goroutine workers, SSL verification, latency tracking, and CSV/JSON report exports.",
+  "repository": "https://github.com/StdBots/StdCheckerBot",
+  "logo": "https://graph.org/file/00ea4effe5d2dfbb8d5be.jpg",
+  "keywords": [
+    "telegram",
+    "bot",
+    "golang",
+    "checker",
+    "url-checker",
+    "proxy-checker",
+    "link-checker",
+    "mongodb",
+    "stdbots",
+    "std-deepanshu"
+  ],
+  "stack": "container",
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Telegram Bot Token from @BotFather",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Telegram Numeric User ID of the Bot Owner",
+      "value": "7394590844",
+      "required": true
+    },
+    "MONGO_URI": {
+      "description": "MongoDB Connection String (MongoDB Atlas or standalone)",
+      "required": true
+    },
+    "DB_NAME": {
+      "description": "Database Name",
+      "value": "stdcheckerbot",
+      "required": false
+    },
+    "FORCE_SUB_CHANNEL": {
+      "description": "Channel username to force users to join (without @)",
+      "value": "StdBots",
+      "required": false
+    },
+    "LOG_CHANNEL_ID": {
+      "description": "Channel ID for audit logs (optional, e.g. -1001234567890)",
+      "value": "0",
+      "required": false
+    },
+    "MAX_CONCURRENT_CHECKS": {
+      "description": "Maximum parallel goroutine workers for bulk requests",
+      "value": "50",
+      "required": false
+    },
+    "ENV": {
+      "description": "Runtime Environment",
+      "value": "production",
+      "required": false
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  }
+}
