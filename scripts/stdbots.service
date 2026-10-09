@@ -1,0 +1,15 @@
+[Unit]
+Description=StdCheckerBot Telegram Service
+After=network.target mongodb.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/stdcheckerbot
+ExecStart=/opt/stdcheckerbot/bin/bot
+Restart=always
+RestartSec=5
+EnvironmentFile=/opt/stdcheckerbot/.env
+
+[Install]
+WantedBy=multi-user.target
